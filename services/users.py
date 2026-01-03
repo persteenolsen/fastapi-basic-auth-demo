@@ -136,7 +136,7 @@ def get_current_user(credentials: Annotated[HTTPBasicCredentials, Depends(securi
             headers={"WWW-Authenticate": "Basic"},
         )
            
-    return user.username
+    return user
 
 # Gets all Users from the PostgreSQL Database
 # Validate if the Credentials are valid
