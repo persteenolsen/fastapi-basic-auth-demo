@@ -33,9 +33,19 @@ app = FastAPI(
 # Set up CORS middleware
 origins = [
 
-   
-    # 03-01-2025 - must be present for testing locally !
-     "*"
+    # Not sure if this is needed, but adding just in case
+    # "https://fastapi-basic-auth-demo.vercel.app/",
+
+    # The domain name of the Vue 3 SPA Client
+    # "https://vue.fastapi.basic.auth.client.persteenolsen.com/",
+     
+    # Allow my local Vue SPA
+    # "http://localhost:3000/",
+
+    # "http://127.0.0.1:8000/",
+    
+    # 03-01-2025 - must be present for work at production !
+    "*"
     
 ]
 
