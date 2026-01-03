@@ -15,8 +15,9 @@ from schemas.user import User as UserSchema
 
 router_auth = APIRouter()
 
-# Note: User Registration Endpoint disabled for Production
-@router_auth.post("/register", response_model=UserSchema, tags=["user"])
+# Public route
+# Note: 03-01-2026 - User Registration Endpoint disabled for Production
+# @router_auth.post("/register", response_model=UserSchema, tags=["user"])
 def register_user(new_user = Depends(do_register_user)):
     return new_user
 
