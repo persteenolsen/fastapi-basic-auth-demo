@@ -4,7 +4,7 @@ A REST API that serves HTTP Basic Authentication + Registration
 
 Last updated:
 
-- 03-01-2026
+- 05-01-2026
 
 Python Version:
 
@@ -43,10 +43,6 @@ If everything works fine, the FastAPI and Swagger documentation is now available
 - You can go to the PostgreSQL at Neon to test your data in the DB
 
 When you make a change to the models and start run the Web App the PostgreSQL should be updated
-
-# JWT Authentication
-
-- The token will expire after 5 minutes for testing and demo. Then a 401 status will happen
 
 # The structure of the API by folders for scalability
 
