@@ -19,8 +19,8 @@ models.user.Base.metadata.create_all(bind=engine)
 # Initialize the FastAPI app
 app = FastAPI(
 
-    title="Python + FastApi + PostgreSQL + HTTP Basic Auth + Alembic",
-    description="15-01-2026 - FastAPI serving HTTP Basic Authentication using these credentials: testuser / admin",
+    title="Python + FastApi + PostgreSQL + SQLAlchemy + Alembic and HTTP Basic Auth",
+    description="27-01-2026 - FastAPI serving HTTP Basic Authentication using these credentials: testuser / admin",
     version="0.0.1",
 
     contact={

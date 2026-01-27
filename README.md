@@ -1,10 +1,10 @@
-# Python + FastAPI + PostgreSQL + HTTP Basic Auth + Alembic + SQLAlchemy
+# Python + FastAPI + PostgreSQL + Alembic + SQLAlchemy and HTTP Basic Auth
 
-A REST API that serves HTTP Basic Authentication + Registration
+A REST API that serves Registration + HTTP Basic Authentication 
 
 Last updated:
 
-- 15-01-2026
+- 27-01-2026
 
 Python Version:
 
@@ -25,6 +25,8 @@ Python Version:
 - Install the requirements:
 
 "pip3 install -r requirements.txt"
+
+- [`The Vue 3 Client at GitHub`](https://github.com/persteenolsen/vue-fastapi-basic-auth-client) - The Vue 3 Client using HTTP Basic Authentication
 
 # Swagger documentation / Testing the API
 
