@@ -26,6 +26,8 @@ Python Version:
 
 "pip3 install -r requirements.txt"
 
+# Try the Vue 3 frontend for testing the Web API
+
 - [`The Vue 3 Client at GitHub`](https://github.com/persteenolsen/vue-fastapi-basic-auth-client) - The Vue 3 Client using HTTP Basic Authentication
 
 # Swagger documentation / Testing the API
