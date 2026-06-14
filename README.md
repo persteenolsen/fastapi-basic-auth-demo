@@ -1,94 +1,212 @@
-# Python + FastAPI + PostgreSQL + Alembic + SQLAlchemy and HTTP Basic Auth
+# Python + FastAPI + PostgreSQL + Alembic + SQLAlchemy + HTTP Basic Authentication
 
-A REST API that serves Registration + HTTP Basic Authentication 
+A REST API for user registration, authentication, and protected routes using HTTP Basic Authentication. Includes database migrations and manual tests.
 
 Last updated:
+- 14-06-2026
 
-- 28-03-2026
-
-Python Version:
-
+Python version:
 - 3.12
 
-# Get startet
+---
 
-- Clone the repository from my GitHub 
+## Features
 
-- Create a virtual environment by Powershell or VS Code:
+- User registration and authentication
+- HTTP Basic Authentication
+- Protected routes with dependency injection
+- Password hashing using pwdlib (Argon2)
+- PostgreSQL integration via SQLAlchemy
+- Database migrations with Alembic
+- Manual authentication testing
+- Swagger/OpenAPI documentation
+- Modular and scalable project structure
 
-"python -m venv <name_of_venv>"
+---
 
-- Go to the virtual environment's directory and activate it:
+## Tech Stack
 
-"Scripts/activate"
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- Alembic
+- Pydantic
+- pwdlib (Argon2)
+- Uvicorn
+- Python 3.12
 
-- Install the requirements:
+---
 
-"pip3 install -r requirements.txt"
+## Getting Started
 
-# Try the Vue 3 frontend for testing the Web API
+### 1. Clone the repository
 
-- [`The Vue 3 Client at GitHub`](https://github.com/persteenolsen/vue-fastapi-basic-auth-client) - The Vue 3 Client using HTTP Basic Authentication
+Clone from GitHub:
 
-# Swagger documentation / Testing the API
+- git clone <your-repository-url>
 
-FastAPI provides the Swagger documentation of the API where you can perform CRUD operations
+### 2. Create virtual environment
 
-To access the documentation, we must run uvicorn:
+Using PowerShell or VS Code terminal:
 
-"uvicorn main:app --reload"
+- python -m venv <name_of_venv>
 
-If everything works fine, the FastAPI and Swagger documentation is now available at: 
+Activate it:
 
-`http://127.0.0.1:8000/docs`
+- Windows: Scripts\activate
+- Mac/Linux: source bin/activate
 
-- Use the Swagger for Register a User in the PostgreSQL DB and try to perform Login operations
+### 3. Install dependencies
 
-- You can go to the PostgreSQL at Neon to test your data in the DB
+- pip install -r requirements.txt
 
-When you make a change to the models and start run the Web App the PostgreSQL should be updated
+---
 
-# The structure of the API by folders for scalability
+## Environment Variables
 
-- The Database functionality is placed in files inside the directory db
+Create a .env file with your configuration:
 
-- The User Routes are placed in files inside the directory routes/user.py
+- DATABASE_URL=your_postgres_connection_string
+- ALGORITHM=HS256
 
-- The simple Routes are placed in files inside the directory routes/simple.py
+---
 
-- The Models are placed in files inside the directory models
+## Run the Application
 
-- The Schemas are placed in files inside the directory schemas
+Start the FastAPI server:
 
-- The functionality of authentication is placed inside the directory security
+- uvicorn main:app --reload
 
-- The functionality like get current user, called from the Routes, is placed inside the directory services
+API will be available at:
 
-# Migration with Alembic
+- http://127.0.0.1:8000
 
-- Install and use Alembic for Migration and run:
+Swagger documentation:
+
+- http://127.0.0.1:8000/docs
+
+---
+
+## Manual Tests (Authentication Verification)
+
+This project includes lightweight manual test scripts for verifying HTTP Basic Authentication and password hashing behavior without requiring pytest.
+
+### Run Credential Authentication Tests
+
+- python -m tests.test_basic_credentials
+
+### What Is Tested
+
+- Valid username and password authentication
+- Invalid username handling
+- Invalid password handling
+
+### Example Output
+
+Valid credentials test: testuser
+
+Invalid username test: Incorrect username or password
+
+Invalid password test: Incorrect username or password
+
+All tests finished
+
+---
+
+## Manual Tests (Password Hashing)
+
+This project also includes manual tests for password hashing and verification.
+
+### Run Password Hash Tests
+
+- python -m tests.test_http_basic_auth
+
+### What Is Tested
+
+- Password hash generation
+- Valid password verification
+- Invalid password verification
+
+### Example Output
+
+Valid password test: True
+
+Invalid password test: False
+
+Generated hash: $argon2id$...
+
+All tests finished
+
+---
+
+## HTTP Basic Authentication
+
+- Authentication is handled using FastAPI's HTTPBasic security
+- Passwords are hashed using Argon2 through pwdlib
+- Invalid credentials return 401 Unauthorized
+- Protected routes use dependency injection to validate users
+
+---
+
+## Project Structure
+
+- db/ → Database configuration and session management
+- models/ → SQLAlchemy database models
+- schemas/ → Pydantic request/response schemas
+- routes/user.py → User-related endpoints
+- routes/simple.py → Simple/example routes
+- security/ → Password hashing and authentication logic
+- service/ → Business logic (e.g. current user retrieval)
+- tests/ → Manual authentication verification scripts
+
+---
+
+## Database Migrations (Alembic)
+
+Initialize Alembic:
 
 - alembic init alembic
 
-- For demonstration I added name in the User Model and Schema and generated and applied migration:
+Create a migration:
 
 - alembic revision --autogenerate -m "create column name"
 
+Apply migrations:
+
 - alembic upgrade head
 
-- Then run the FastAPI again and check that everything works fine
+---
 
-# Deployment to Vercel
+## Frontend (Optional)
 
-- Take a look at the file "vercel.json"
+You can test the API using the Vue 3 client:
 
-- Create a Project at Vercel from your repository at GitHub with the code of this FastAPI
+- https://github.com/persteenolsen/vue-fastapi-basic-auth-client
 
-- Create the envirement variables from .env at Vercel with the connection to PostgreSQL
+This client supports HTTP Basic Authentication and API interaction.
 
-- Make a commit to your GitHub
+---
 
-- Go to Vercel and check that the build and deployment happened and your site is in Production
+## Deployment (Vercel)
 
-Happy use of FastAPI :-)
+To deploy on Vercel:
 
+1. Configure vercel.json in your project
+2. Create a new project in Vercel from your GitHub repository
+3. Add environment variables from your .env file in Vercel
+4. Push changes to GitHub
+5. Vercel will automatically build and deploy your API
+
+---
+
+## Notes
+
+- Make sure PostgreSQL is running and accessible
+- Update models and run migrations when schema changes
+- Use Swagger UI for quick manual testing
+- Store passwords only as hashes
+- Use HTTPS in production when using HTTP Basic Authentication
+
+---
+
+Happy coding with FastAPI 🚀
