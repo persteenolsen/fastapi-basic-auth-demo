@@ -1,16 +1,16 @@
-# Python + FastAPI + PostgreSQL + Alembic + SQLAlchemy + HTTP Basic Authentication
+# 🔐 Python + FastAPI + PostgreSQL + Alembic + SQLAlchemy + HTTP Basic Authentication
 
 A REST API for user registration, authentication, and protected routes using HTTP Basic Authentication. Includes database migrations and manual tests.
 
-Last updated:
+**Last updated:**
 - 14-06-2026
 
-Python version:
+**Python version:**
 - 3.12
 
 ---
 
-## Features
+## ✨ Features
 
 - User registration and authentication
 - HTTP Basic Authentication
@@ -24,7 +24,7 @@ Python version:
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - FastAPI
 - PostgreSQL
@@ -37,15 +37,15 @@ Python version:
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-### 1. Clone the repository
+### 1️⃣ Clone the repository
 
 Clone from GitHub:
 
 - git clone <your-repository-url>
 
-### 2. Create virtual environment
+### 2️⃣ Create virtual environment
 
 Using PowerShell or VS Code terminal:
 
@@ -56,22 +56,22 @@ Activate it:
 - Windows: Scripts\activate
 - Mac/Linux: source bin/activate
 
-### 3. Install dependencies
+### 3️⃣ Install dependencies
 
 - pip install -r requirements.txt
 
 ---
 
-## Environment Variables
+## ⚙️ Environment Variables
 
-Create a .env file with your configuration:
+Create a `.env` file with your configuration:
 
 - DATABASE_URL=your_postgres_connection_string
 - ALGORITHM=HS256
 
 ---
 
-## Run the Application
+## ▶️ Run the Application
 
 Start the FastAPI server:
 
@@ -87,21 +87,21 @@ Swagger documentation:
 
 ---
 
-## Manual Tests (Authentication Verification)
+## 🧪 Manual Tests (Authentication Verification)
 
 This project includes lightweight manual test scripts for verifying HTTP Basic Authentication and password hashing behavior without requiring pytest.
 
-### Run Credential Authentication Tests
+### ▶️ Run Credential Authentication Tests
 
 - python -m tests.test_basic_credentials
 
-### What Is Tested
+### ✅ What Is Tested
 
 - Valid username and password authentication
 - Invalid username handling
 - Invalid password handling
 
-### Example Output
+### 📋 Example Output
 
 Valid credentials test: testuser
 
@@ -113,21 +113,21 @@ All tests finished
 
 ---
 
-## Manual Tests (Password Hashing)
+## 🔑 Manual Tests (Password Hashing)
 
 This project also includes manual tests for password hashing and verification.
 
-### Run Password Hash Tests
+### ▶️ Run Password Hash Tests
 
 - python -m tests.test_http_basic_auth
 
-### What Is Tested
+### ✅ What Is Tested
 
 - Password hash generation
 - Valid password verification
 - Invalid password verification
 
-### Example Output
+### 📋 Example Output
 
 Valid password test: True
 
@@ -139,7 +139,7 @@ All tests finished
 
 ---
 
-## HTTP Basic Authentication
+## 🔒 HTTP Basic Authentication
 
 - Authentication is handled using FastAPI's HTTPBasic security
 - Passwords are hashed using Argon2 through pwdlib
@@ -148,7 +148,7 @@ All tests finished
 
 ---
 
-## Project Structure
+## 🏗️ Project Structure
 
 - db/ → Database configuration and session management
 - models/ → SQLAlchemy database models
@@ -161,7 +161,7 @@ All tests finished
 
 ---
 
-## Database Migrations (Alembic)
+## 🗄️ Database Migrations (Alembic)
 
 Initialize Alembic:
 
@@ -177,7 +177,7 @@ Apply migrations:
 
 ---
 
-## Frontend (Optional)
+## 🖥️ Frontend (Optional)
 
 You can test the API using the Vue 3 client:
 
@@ -187,7 +187,7 @@ This client supports HTTP Basic Authentication and API interaction.
 
 ---
 
-## Deployment (Vercel)
+## ☁️ Deployment (Vercel)
 
 To deploy on Vercel:
 
@@ -199,7 +199,7 @@ To deploy on Vercel:
 
 ---
 
-## Notes
+## 📝 Notes
 
 - Make sure PostgreSQL is running and accessible
 - Update models and run migrations when schema changes
