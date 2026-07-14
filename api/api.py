@@ -20,7 +20,7 @@ from routes.simple import router_simple as router_simple_one
 # Initialize the FastAPI app
 app = FastAPI(
 
-    title="FastAPI Authentication Using HTTP Basic Authentication",
+    title="FastAPI Using HTTP Basic Authentication",
     description="14-07-2026 - FastAPI authentication service using HTTP Basic Authentication with PostgreSQL for data persistence and Alembic for database migrations. Demo credentials: testuser / admin",
     version="0.0.1",
 
